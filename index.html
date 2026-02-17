@@ -382,22 +382,24 @@
                             
                             <div class="col-md-7">
                                 
-                                <form class="contact-form mb-2">
+                                <form class="contact-form mb-2" id="contactForm">
+
                                     <div class="mb-3">
                                         <input type="text" class="form-control" placeholder="Your Name" required>
                                     </div>
+                                
                                     <div class="mb-3">
                                         <input type="email" class="form-control" placeholder="Your Email" required>
                                     </div>
+                                
                                     <div class="mb-3">
-                                        <textarea class="form-control" rows="4" placeholder="Your Message"
-                                            required></textarea>
+                                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
                                     </div>
-                                    <button type="button" class="btn btn-primary" onclick="window.location.href='thank-you.html'">
-                                        Send Message
-                                      </button>
-                                    
+                                
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                
                                 </form>
+                                
                             </div>
                             <!-- Contact Details -->
                             <div class="col-md-5 d-flex flex-column justify-content-center border-start ps-4">
@@ -425,7 +427,16 @@
             <p class="mb-0">&copy; 2026 Sreenandana V Pavithran. All Rights Reserved.</p>
         </footer>
     </div>
-
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // stop normal form submit
+        
+            if (this.checkValidity()) {
+                window.location.href = "thank-you.html";
+            }
+        });
+        </script>
+        
 </body>
 
 </html>
